@@ -13,8 +13,9 @@ class ProductCategoryFactory extends Factory
      */
     public function definition()
     {
-        return [
-            //
+        return [ //Užpildyti kategorijas 3 netikromis kategorijomis
+            'title' => $this->faker->sentence(1),
+            'description' => $this->faker->paragraph(5),
         ];
     }
 }
