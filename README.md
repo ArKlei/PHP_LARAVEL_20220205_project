@@ -53,3 +53,11 @@ Turi būti galimybė įkelti paveiksliuką.
 22. Patikrinti kokia eilės tvarka migracijos bylų: pirma - mažiausia (ProductCategory), poto (Product). 
 23. Per PhPMyAdmin patikrinti ar duomenų bazės (projekto pavadinimas) lentelės (pavadinimai atitinka sukurtus modelius) atsirado stulpeliai su užduotais pavadinimais ir duomenų tipais "Schema" metode. 
 24. ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
+25. ProductFactory.php ir ProductCategoryFactory.php metoduose Definition turime sudaryti brėžinius, pagal kurį gaminsim produktus ir kategorijas - jų duomenis.
+26. Užpildyti kategorijas 3 netikromis kategorijomis:'title' => $this->faker->sentence(1), 'description' => $this->faker->paragraph(5).
+27. Užpildyti 150 netikrų produktų. Paveiksliukams naudoti $this->faker->imageUrl(): 'description' => $this->faker->paragraph(5),'price' => rand(0,1000),'category_id'=> rand(1,3),'image_url' =>$this->faker->imageUrl().
+28. Užpildyti ProductSeeder.php 150 produktų: Product::factory()->count(150)->create(); ir use App\Models\Product; viršuje.
+29. Užpildyti ProductCategorySeeder.php 3 kategorijomis: ProductCategory::factory()->count(3)->create(); ir use App\Models\ProductCategory; viršuje.
+30. Užpildyti DatabaseSeeder.php metodu iškviesti užpildytus seeder failus: $this->call([ ProductCategorySeeder::class, ProductSeeder::class ]); ir viršuje nurodyti abų modelius: use App\Models\Product; use App\Models\ProductCategory; (svarbu eiliškumas, kuri kursis pirmas).
+31. Paleisti php artisan migrate:fresh --seed ir tikrinti duomenų bazę.
+32. 
