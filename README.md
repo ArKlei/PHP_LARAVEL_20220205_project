@@ -50,4 +50,6 @@ Turi būti galimybė įkelti paveiksliuką.
 19. Sukurti modelio/objekto "ProductCategory" savybes/DB duomenų tipus: id, title(string), description(longText) ir ryšį per hasMany su Product per savo id ir product_category_id (kategorija gali tūrėti daug produktų).
 20. Sukurti modelio/objekto "Product" savybes/DB duomenų tipus: id, title(string), description(longText), price(float), nustatyti kodu $table->float('price', 8, 2), category_id(unsignedBigInteger), image_url(string) bei ryšį foreign su ProductCategory per savo category_id į id.
 21. Paleisti "php artisan migrate:fresh", prieš tai įsitikinus ar aplamai paleistas xampp!. Per PhPMyAdmin, duombazės lentelėse per "Structure" galima pamatyti kas įsirašė: "ženklų apribojimas, unsigned, kt...
-Patikrinti kokia eilės tvarka migracijos bylų: pirma - mažiausia (articleImage), poto vidurinė (Articles) ir paskutinė/apatinė sąraše (ArticleCategory) 24.Per PhPMyAdmin patikrinti ar duomenų bazės (projekto pavadinimas) lentelės (pavadinimai atitinka sukurtus modelius) atsirado stulpeliai su užduotais pavadinimais ir duomenų tipais "Schema" metode. ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
+22. Patikrinti kokia eilės tvarka migracijos bylų: pirma - mažiausia (ProductCategory), poto (Product). 
+23. Per PhPMyAdmin patikrinti ar duomenų bazės (projekto pavadinimas) lentelės (pavadinimai atitinka sukurtus modelius) atsirado stulpeliai su užduotais pavadinimais ir duomenų tipais "Schema" metode. 
+24. ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
