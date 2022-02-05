@@ -61,3 +61,5 @@ Turi būti galimybė įkelti paveiksliuką.
 30. Užpildyti DatabaseSeeder.php metodu iškviesti užpildytus seeder failus: $this->call([ ProductCategorySeeder::class, ProductSeeder::class ]); ir viršuje nurodyti abų modelius: use App\Models\Product; use App\Models\ProductCategory; (svarbu eiliškumas, kuri kursis pirmas).
 31. Paleisti php artisan migrate:fresh --seed ir tikrinti duomenų bazę.
 32. ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
+33. Produktams sukurti index.blade.php, create.blade.php, edit.blade.php ir sukurti pagal šiuos vaizdus CRUD operacijas. Turi būti galimybė įkelti paveiksliuką.
+34. Kategorijoms sukurti index.blade.php, create.blade.php, edit.blade.php ir sukurti pagal šiuos vaizdus CRUD operacijas.
