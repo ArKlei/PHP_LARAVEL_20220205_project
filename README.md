@@ -60,4 +60,4 @@ Turi būti galimybė įkelti paveiksliuką.
 29. Užpildyti ProductCategorySeeder.php 3 kategorijomis: ProductCategory::factory()->count(3)->create(); ir use App\Models\ProductCategory; viršuje.
 30. Užpildyti DatabaseSeeder.php metodu iškviesti užpildytus seeder failus: $this->call([ ProductCategorySeeder::class, ProductSeeder::class ]); ir viršuje nurodyti abų modelius: use App\Models\Product; use App\Models\ProductCategory; (svarbu eiliškumas, kuri kursis pirmas).
 31. Paleisti php artisan migrate:fresh --seed ir tikrinti duomenų bazę.
-32. 
+32. ĮRAŠYTI Į GITHUB - SU COMMIT KĄ ATLIKAU
