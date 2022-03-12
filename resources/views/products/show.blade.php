@@ -18,7 +18,7 @@
 
       <div class="container-fluid">
 
-        <div class="card-header" style="margin-top:20px; background-color:blue">
+        <div class="card-header" style="margin-top:21px; background-color:blue">
         
             <p><h4 style="text-align:center; color:yellow">Data of {{$product->title}}</h4><p>
 
