@@ -15,9 +15,9 @@
 
                 <p><div class="text-center"><img src="https://bit.lt/wp-content/themes/bit/assets/img/_bit-intro.jpg" class="rounded" style="width:400px; height:auto"></div>
             <p>
-                <div class="text-center text-dark" style="font-size:75px">BIT Student project "Products"</div>
+                <div class="text-center" style="font-size:75px; color:blue">BIT Student project "Products"</div>
                 <p>
-                <div class="text-center text-dark" style="font-size:50px">Made by BIT alumni</div>
+                <div class="text-center" style="font-size:50px; color:blue">Made by BIT alumni</div>
             </div>
 </div>
 @endsection

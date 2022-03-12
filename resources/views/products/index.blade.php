@@ -11,63 +11,88 @@
  <a href="{{route('product_category.create')}}" id="create_product_category">Add Product Category</a>
 </div>
 
-<div class="container">
-    <p><h1 style="text-align:center; font-size:50px; color:gold">Present products in all categories</h1><p>
+<div class="row justify-content-center">
 
-@if (session()->has('error_message'))
-        <div class="alert alert-danger">
-            {{session()->get('error_message')}}
-        </div>   
-@endif
+    <div class="col-md-8">
 
-@if (session()->has('success_message'))
-        <div class="alert alert-success">
-            {{session()->get('success_message')}}
-        </div>   
-@endif
+        <div class="card">
 
-@if (count($products) == 0)
-    <p>There is no products in the database yet</p>
-@endif
+            <div class="container-fluid">
 
-{{-- create forma - mums reikia nuorodos ar mygtuko --}}
-<a class="btn btn-primary" href="{{route('product.create')}}">Include new product's data into database</a>
-<p>
+                <div class="card-header" style="margin-top:20px; background-color:blue">
+                    
+                    <p><h4 style="text-align:center; color:yellow">Present products in all categories</h4><p>
+                    
+
+                        @if (session()->has('error_message'))
+                                <div class="alert alert-danger">
+                                    {{session()->get('error_message')}}
+                                </div>   
+                        @endif
+
+                        @if (session()->has('success_message'))
+                                <div class="alert alert-success">
+                                    {{session()->get('success_message')}}
+                                </div>   
+                        @endif
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="row mb-3">
+
+                        @if (count($products) == 0)
+                            <p>There is no products in the database yet</p>
+                        @endif
+
+                        {{-- create forma - mums reikia nuorodos ar mygtuko --}}
+                        <a class="btn btn-primary" style="background-color:blue; color:yellow; font-weight:bold" href="{{route('product.create')}}">Include new product's data into database</a>
+                        <p>
 
 
-<table class="table table-striped">
-<tr>
-    <th>Id</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Price, eur</th>
-    <th>Category</th>
-    <th>Image address (url)</th>
-    <th>Actions</th>
-</tr>
+                        <table class="table table-striped">
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Price, eur</th>
+                            <th>Category</th>
+                            <th>Image address (url)</th>
+                            <th>Actions</th>
+                        </tr>
 
-@foreach ($products as $product)
-    <tr>
-        <td>{{$product->id}}</td>
-        <td>{{$product->title}}</td>
-        <td>{{$product->description}}</td>
-        <td>{{$product->price}}</td>
-        <td>{{$product->productProductCategory->title}}</td>
-        <td>{{$product->image_url}}</td>
-        <td>
-            <a class="btn btn-primary" style="width:100px" href="{{route('product.edit', [$product])}}">Edit</a><p>
-            <p><a class="btn btn-secondary" style="width:100px" href="{{route('product.show', [$product])}}">Show</a>
-            <p>
-            <form method="post" action='{{route('product.destroy', [$product])}}'>
-                @csrf
-                <button class="btn btn-danger" style="width:100px" type="submit">Delete</button>
-            </form>
-        </td>
-    </tr>
-@endforeach
+                        @foreach ($products as $product)
+                            <tr>
+                                <td>{{$product->id}}</td>
+                                <td>{{$product->title}}</td>
+                                <td>{{$product->description}}</td>
+                                <td>{{$product->price}}</td>
+                                <td>{{$product->productProductCategory->title}}</td>
+                                <td>{{$product->image_url}}</td>
+                                <td>
+                                    <a class="btn" style="width:100px; color:yellow; background-color:blue" href="{{route('product.edit', [$product])}}">Edit</a><p>
+                                    <p><a class="btn" style="width:100px; color:blue; background-color:yellow" href="{{route('product.show', [$product])}}">Show</a>
+                                    <p>
+                                    <form method="post" action='{{route('product.destroy', [$product])}}'>
+                                        @csrf
+                                        <button class="btn btn-danger" style="width:100px" type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
 
-</table>
+                        </table>
 
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 

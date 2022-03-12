@@ -28,7 +28,6 @@
   width: 300px;
   text-decoration: none;
   font-size: 20px;
-  color: white;
   border-radius: 0 5px 5px 0;
 }
 
@@ -38,27 +37,32 @@
 
 #home {
   top: 120px;
-  background-color: #04AA6D;
+  background-color: yellow;
+  color:blue;
 }
 
 #product {
   top: 180px;
-  background-color: #2196F3;
+  background-color: blue;
+  color:yellow;
 }
 
 #create_product {
   top: 240px;
-  background-color: #f44336;
+  background-color: yellow;
+  color:blue;
 }
 
 #create_product_category {
   top: 300px;
-  background-color: #04AA6D;
+  background-color: blue;
+  color:yellow;
 }
 
 #product_category {
   top: 360px;
-  background-color: #2196F3;
+  background-color: yellow;
+  color:blue;
 }
 
 </style>
