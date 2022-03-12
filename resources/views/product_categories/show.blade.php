@@ -20,7 +20,7 @@
 
         <div class="card-header" style="margin-top:21px; background-color:blue">
         
-            <p><h4 style="text-align:center; color:yellow">Data of {{$product->title}}</h4><p>
+            <p><h4 style="text-align:center; color:yellow">Data of {{$product_category->title}}</h4><p>
 
         </div>
 
@@ -28,18 +28,16 @@
 
             <div class="row mb-3">
         
-                <p>Id – {{$product->id}}</p>
-                <p>Title – {{$product->title}}</p>
-                <p>Description – {{$product->description}}</p>
-                <p>Category Title – {{$product->productProductCategory->title}}</p>
-                <p>Image :<p><img src="{{$product->image_url}}" style="width:150px; height:auto" alt="{{$product->name}}">{{$product->image_url}}</p>
+                <p>Id – {{$product_category->id}}</p>
+                <p>Title – {{$product_category->title}}</p>
+                <p>Description – {{$product_category->description}}</p>
                 
                 <p>
-                <form method="post" action='{{route('product.destroy', [$product])}}'>
+                <form method="post" action='{{route('product_category.destroy', [$product_category])}}'>
                     @csrf
                     <button class="btn" style="width:100px; color:blue; background-color:yellow" type="submit">Delete</button>
                 
-                <a class="btn" style="width:100px; color:yellow; background-color:blue" href="{{route('product.index')}}">Back</a></form>
+                <a class="btn" style="width:100px; color:yellow; background-color:blue" href="{{route('product_category.index')}}">Back</a></form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 

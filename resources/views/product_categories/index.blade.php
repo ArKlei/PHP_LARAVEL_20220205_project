@@ -21,7 +21,7 @@
 
                 <div class="card-header" style="margin-top:20px; background-color:blue">
                     
-                    <p><h4 style="text-align:center; color:yellow">Present products in all categories</h4><p>
+                    <p><h4 style="text-align:center; color:yellow">Present categories</h4><p>
                     
 
                         @if (session()->has('error_message'))
@@ -42,12 +42,12 @@
 
                     <div class="row mb-3">
 
-                        @if (count($products) == 0)
-                            <p>There is no products in the database yet</p>
+                        @if (count($product_categories) == 0)
+                            <p>There is no product categorties in the database yet</p>
                         @endif
 
                         {{-- create forma - mums reikia nuorodos ar mygtuko --}}
-                        <a class="btn btn-primary" style="background-color:blue; color:yellow; font-weight:bold" href="{{route('product.create')}}">Include new product's data into database</a>
+                        <a class="btn btn-primary" style="background-color:blue; color:yellow; font-weight:bold" href="{{route('product_category.create')}}">Include new product categorie's data into database</a>
                         <p>
 
 
@@ -56,25 +56,19 @@
                             <th>Id</th>
                             <th>Title</th>
                             <th>Description</th>
-                            <th>Price, eur</th>
-                            <th>Category</th>
-                            <th>Image address (url)</th>
                             <th>Actions</th>
                         </tr>
 
-                        @foreach ($products as $product)
+                        @foreach ($product_categories as $product_category)
                             <tr>
-                                <td>{{$product->id}}</td>
-                                <td>{{$product->title}}</td>
-                                <td>{{$product->description}}</td>
-                                <td>{{$product->price}}</td>
-                                <td>{{$product->productProductCategory->title}}</td>
-                                <td>{{$product->image_url}}</td>
+                                <td>{{$product_category->id}}</td>
+                                <td>{{$product_category->title}}</td>
+                                <td>{{$product_category->description}}</td>
                                 <td>
-                                    <a class="btn" style="width:100px; color:yellow; background-color:blue" href="{{route('product.edit', [$product])}}">Edit</a><p>
-                                    <p><a class="btn" style="width:100px; color:blue; background-color:yellow" href="{{route('product.show', [$product])}}">Show</a>
+                                    <a class="btn" style="width:100px; color:yellow; background-color:blue" href="{{route('product_category.edit', [$product_category])}}">Edit</a><p>
+                                    <p><a class="btn" style="width:100px; color:blue; background-color:yellow" href="{{route('product_category.show', [$product_category])}}">Show</a>
                                     <p>
-                                    <form method="post" action='{{route('product.destroy', [$product])}}'>
+                                    <form method="post" action='{{route('product_category.destroy', [$product_category])}}'>
                                         @csrf
                                         <button class="btn btn-danger" style="width:100px" type="submit">Delete</button>
                                     </form>

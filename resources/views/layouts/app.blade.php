@@ -53,17 +53,22 @@
   color:blue;
 }
 
-#create_product_category {
+
+#product_category {
   top: 300px;
   background-color: blue;
   color:yellow;
+  
 }
 
-#product_category {
+#create_product_category {
   top: 360px;
   background-color: yellow;
   color:blue;
+  
 }
+
+
 
 </style>
 </head>

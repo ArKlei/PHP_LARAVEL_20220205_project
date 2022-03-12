@@ -5,7 +5,7 @@
 <div id="mySidenav" class="sidenav">
   <a href="{{route('product.index')}}" id="product">Products</a>
   <a href="{{route('product.create')}}" id="create_product">Add product</a>
-  <a href="{{route('product_category.index')}}" id="product_category">Product Category</a>
+  <a href="{{route('product_category.index')}}" id="product_category">Product Categories</a>
  <a href="{{route('product_category.create')}}" id="create_product_category">Add Product Category</a>
 </div>
 

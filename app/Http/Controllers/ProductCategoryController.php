@@ -46,8 +46,8 @@ class ProductCategoryController extends Controller
     {
         $product_category = new ProductCategory;
 
-        $product_category->title = $request->product_category_title;
-        $product_category->description = $request->product_category_description;
+        $product_category->title = $request->category_title;
+        $product_category->description = $request->category_description;
         
         
         $product_category->save();
@@ -92,8 +92,8 @@ class ProductCategoryController extends Controller
     {
         //pasiimu is lauku, ir irasau i duomenu baze
 
-        $product_category->title = $request->product_category_title;
-        $product_category->description = $request->product_category_description;
+        $product_category->title = $request->category_title;
+        $product_category->description = $request->category_description;
         
         $product_category->save();//UPDATE
 
