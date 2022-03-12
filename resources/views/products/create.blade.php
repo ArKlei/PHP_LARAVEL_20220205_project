@@ -20,7 +20,7 @@
 
                 <div class="card-header" style="margin-top:20px; background-color:blue">
                     
-                    <p><h4 style="text-align:center; font-size:50px; color:yellow">Add product</h4><p>
+                    <p><h4 style="text-align:center; color:yellow">Add product</h4><p>
 
                     </div>
 
@@ -28,7 +28,7 @@
 
             <div class="row mb-3">
 
-                <form method='POST' action='{{route('product.store')}}'>
+                <form method='POST' enctype="multipart/form-data" action='{{route('product.store')}}'>
                     
                     <div class="row mb-3">
                         
@@ -36,7 +36,7 @@
                                           
                         <div class="col-md-6"> 
                             
-                            <input class="form-control" type='text' name="product_title" />
+                            <input class="form-control" type='text' name="title" />
                             
                         </div>
             
@@ -44,11 +44,11 @@
           
                     <div class="row mb-3">
                         
-                        <label for="text" class="col-md-4 col-form-label text-md-end">Product Desciption</label>
+                        <label for="text" class="col-md-4 col-form-label text-md-end">Product Description</label>
                                           
                         <div class="col-md-6"> 
 
-                            <input  class="form-control" type='text' name="product_description" />
+                            <input  class="form-control" type='text' name="description" />
                             
                         </div>
             
@@ -60,7 +60,7 @@
                                   
                         <div class="col-md-6"> 
                     
-                            <input  class="form-control" type='text' name="product_price" />
+                            <input  class="form-control" type='number' name="price" />
                             
                         </div>
             
@@ -68,13 +68,13 @@
 
                     <div class="row mb-3">
         
-                        <label for="number" class="col-md-4 col-form-label text-md-end">Product Price</label>
+                        <label for="number" class="col-md-4 col-form-label text-md-end">Product Category ID</label>
                           
                         <div class="col-md-6"> 
                     
-                            <select class="form-control" name="category_id" value=''>
+                            <select class="form-control" type='number' name="category_id" value=''>
                                 @foreach ($product_categories as $value)
-                                    <option value="{{$value->id}}">{{$value->productProductCategory->title}}: {{$value->}}</option>
+                                    <option value="{{$value->id}}">{{$value->title}}</option>
                                 @endforeach   
                             
                             </select>
@@ -85,14 +85,14 @@
 
                     <div class="row mb-3">
 
-                        <label for="text" class="col-md-4 col-form-label text-md-end">Image address (url)</label>
+                        <label for="file" class="col-md-4 col-form-label text-md-end">Image address (url)</label>
                   
                         <div class="col-md-6"> 
                     
-                            <input  class="form-control" type='text' name="product_image_url"/>
+                            <input  class="form-control" type='file' name="image_url"/>
                                 
                                 @csrf
-                                <p>
+                                <p><p>
                                 <button class="btn" style="width:100px; color:yellow; background-color:blue" type='submit'>Add</button>
                             
                                 <a class="btn" style="width:100px; color:blue; background-color:yellow" href="{{route('product.index')}}">Back</a>

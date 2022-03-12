@@ -10,20 +10,36 @@
  <a href="{{route('product_category.create')}}" id="create_product_category">Add Product Category</a>
 </div>
 
-    <div class="container">
-        <p><h1 style="text-align:center; font-size:50px; color:gold">Data of </h1><h1 style="text-align:center; font-size:50px; color:black">{{$product->title}}</h1><p>
-        <p>Id – {{$product->id}}</p>
-        <p>Title – {{$product->title}}</p>
-        <p>Description – {{$product->description}}</p>
-        <p>Category Title – {{$product->productProductCategory->title}}</p>
-        <p>Image :<p><img src="{{$product->image_url}}" style="width:150px; height:auto" alt="{{$product->name}}"></p>
+<div class="row justify-content-center">
+
+<div class="col-md-8">    
+
+  <div class="card">
+
+      <div class="container-fluid">
+
+        <div class="card-header" style="margin-top:20px; background-color:blue">
         
-        <p>
-        <form method="post" action='{{route('product.destroy', [$product])}}'>
-            @csrf
-            <button class="btn btn-danger" type="submit">Delete product from database</button>
+            <p><h4 style="text-align:center; color:yellow">Data of {{$product->title}}</h4><p>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row mb-3">
         
-        <a class="btn btn-secondary" style="width:100px" href="{{route('product.index')}}">Back</a></form>
+                <p>Id – {{$product->id}}</p>
+                <p>Title – {{$product->title}}</p>
+                <p>Description – {{$product->description}}</p>
+                <p>Category Title – {{$product->productProductCategory->title}}</p>
+                <p>Image :<p><img src="{{$product->image_url}}" style="width:150px; height:auto" alt="{{$product->name}}">{{$product->image_url}}</p>
+                
+                <p>
+                <form method="post" action='{{route('product.destroy', [$product])}}'>
+                    @csrf
+                    <button class="btn" style="width:100px; color:blue; background-color:yellow" type="submit">Delete</button>
+                
+                <a class="btn" style="width:100px; color:yellow; background-color:blue" href="{{route('product.index')}}">Back</a></form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 

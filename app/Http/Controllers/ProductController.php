@@ -65,11 +65,15 @@ class ProductController extends Controller
     {
         $product = new Product;
 
-        $product->title = $request->product_title;
-        $product->description = $request->product_description;
-        $product->price = $request->product_price;
-        $product->category_id = $request->product_category_id;
-        $product->image_url = $request->product_image_url;
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->category_id = $request->category_id;
+
+        $imageName = 'image'.time().'.'.$request->image_url->extension();
+        $request->image_url->move(public_path('images'), $imageName);
+        $product->image_url = $imageName;
+        
         
         $product->save();
 
@@ -114,11 +118,16 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
 
-        $product->title = $request->product_title;
-        $product->description = $request->product_description;
-        $product->price = $request->product_price;
-        $product->category_id = $request->product_category_id;
-        $product->image_url = $request->product_image_url;
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->category_id = $request->category_id;
+        
+        if($request->has('image_url')) {
+        $imageName = 'image'.time().'.'.$request->image_url->extension();
+        $request->image_url->move(public_path('images'), $imageName);
+        $product->image_url = $imageName;
+        }
 
         $product->save();//UPDATE
 
