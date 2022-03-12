@@ -36,7 +36,7 @@
                 </div>
             @endif
 
-            <div class="container">
+            <div class="container test">
 
                 <p><div class="text-center"><img src="https://bit.lt/wp-content/themes/bit/assets/img/_bit-intro.jpg" class="rounded" style="width:400px; height:auto"></div>
             <p>
