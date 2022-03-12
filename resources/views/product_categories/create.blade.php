@@ -20,7 +20,7 @@
 
                 <div class="card-header" style="margin-top:20px; background-color:blue">
                     
-                    <p><h4 style="text-align:center; color:yellow">Add product</h4><p>
+                    <p><h4 style="text-align:center; color:yellow">Add product category</h4><p>
 
                     </div>
 
@@ -32,7 +32,7 @@
                     
                     <div class="row mb-3">
                         
-                        <label for="text" class="col-md-4 col-form-label text-md-end">Product Title</label>
+                        <label for="text" class="col-md-4 col-form-label text-md-end">Product category title</label>
                                           
                         <div class="col-md-6"> 
                             
@@ -44,52 +44,12 @@
           
                     <div class="row mb-3">
                         
-                        <label for="text" class="col-md-4 col-form-label text-md-end">Product Description</label>
+                        <label for="text" class="col-md-4 col-form-label text-md-end">Product category description</label>
                                           
                         <div class="col-md-6"> 
 
                             <input  class="form-control" type='text' name="description" />
                             
-                        </div>
-            
-                    </div>
-  
-                    <div class="row mb-3">
-                
-                        <label for="number" class="col-md-4 col-form-label text-md-end">Product Price</label>
-                                  
-                        <div class="col-md-6"> 
-                    
-                            <input  class="form-control" type='number' name="price" />
-                            
-                        </div>
-            
-                    </div>
-
-                    <div class="row mb-3">
-        
-                        <label for="number" class="col-md-4 col-form-label text-md-end">Product Category ID</label>
-                          
-                        <div class="col-md-6"> 
-                    
-                            <select class="form-control" type='number' name="category_id" value=''>
-                                @foreach ($product_categories as $value)
-                                    <option value="{{$value->id}}">{{$value->title}}</option>
-                                @endforeach   
-                            
-                            </select>
-                        
-                        </div>
-            
-                    </div>
-
-                    <div class="row mb-3">
-
-                        <label for="file" class="col-md-4 col-form-label text-md-end">Image address (url)</label>
-                  
-                        <div class="col-md-6"> 
-                    
-                            <input  class="form-control" type='file' name="image_url"/>
                                 
                                 @csrf
                                 <p><p>
